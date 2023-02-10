@@ -1,0 +1,24 @@
+<%= turbo_frame_tag "rooms" do%>
+
+  <header class="p-5">
+    <nav class="w-full bg-[#111827] p-6 rounded-md shadow-md ">
+    <ul class="flex-row flex w-2/12 justify-between">
+      <li class="mx-4 w-40">
+        <p>email: <strong class="text-slate-50"><%= @user.email %></strong></p>
+      </li>
+    </ul>
+    </nav>
+  </header>  
+
+<div class="p-7">
+    <h1 class="text-5xl text-slate-50 font-bold">Rooms</h1>
+    <div class="bg-[#111827] w-full rounded-md mt-5 p-5 shadow-md grid grid-cols-2 md:grid-cols-4 gap-4 ">
+        <% @rooms.each do |room|%>
+            <div class="">
+              <a href=<%= "/rooms/#{room.id}"%>><%= room.name %></a>
+            </div>
+        <%end%>
+    </div>
+</div>
+
+<%end%>

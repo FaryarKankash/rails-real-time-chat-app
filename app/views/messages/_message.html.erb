@@ -1,0 +1,18 @@
+<%= turbo_frame_tag dom_id(message) do%>
+<div id="<%= dom_id message %>">
+<%#<%if message.user_id == @user.id %>
+<%#<div class="relative w-72 bg-[#1d4ed8] m-3 px-4 py-2 text-slate-50 rounded shadow">
+ <%# <span class="block">email: <%= message.user.email%></span>
+  <%#<span class="block"><%= message.content %></span>
+<%#</div>
+<%# <% end %> 
+
+<%#<%if message.user_id != @user.id %>
+<div class="relative w-72 bg-[#111827] m-3 px-4 py-2 text-gray-700 rounded shadow">
+  <span class="block text-sm text-slate-500">email: <%= message.user.email%></span>
+  <span class="block text-lg text-slate-50"><%= message.content %></span>
+</div>
+<%#<% end %>
+</div>
+
+<%end%>

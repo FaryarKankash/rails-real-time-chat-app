@@ -1,0 +1,42 @@
+<%= turbo_frame_tag "rooms_#{@room.id}" do%>
+   <div class="p-5">
+    <h1 class="text-4xl text-slate-50 font-bold"><%= @room.name %></h1>
+   </div>
+<% end %>
+
+<div id="messages">
+  <%= turbo_stream_from "messages"%>
+  <%= turbo_frame_tag "messages" do%>
+  <% if @messages%>
+      <%= render @messages%>
+  <% end %>
+  <%end%>
+</div>
+
+<%= form_with scope: :message, url: "/messages", method: :post, class: "flex flex-row down py-2", local: true do |f|%>
+   <div class="center px-2 w-full">
+      <%= f.text_area :content, class: "form-control
+        block
+        w-full
+        h-fit
+        px-3
+        py-1.5
+        text-base
+        font-normal
+        text-[#1d4ed8]
+        bg-white bg-clip-padding
+        border border-solid border-gray-300 border-2
+        rounded
+        transition
+        ease-in-out
+        m-0
+        focus:text-[#1d4ed8] focus:bg-white focus:border-[#1e3a8a] focus:outline-none
+      "%>
+   </div>
+   <%= f.hidden_field :user_id, value: @user.id %>
+   <%= f.hidden_field :room_id, value: @room.id %>
+   <div class="center p-2">
+      <%= f.submit "send", class: "mt-4 bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white px-2 border border-blue-500
+        hover:border-transparent rounded w-18"%>
+   </div>
+<% end %>

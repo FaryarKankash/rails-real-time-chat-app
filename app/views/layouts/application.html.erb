@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>RealChat</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <%= javascript_importmap_tags %>
+  </head>
+
+  <body>
+  <% flash.each do |name, msg|%>
+    <h3 style="color: green;"> <%= msg %> </h3>
+  <%end%>
+    <%= yield %>
+  </body>
+</html>
