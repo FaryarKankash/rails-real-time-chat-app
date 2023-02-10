@@ -1,24 +1,19 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+- Ruby version "3.1.1"
 
-Things you may want to cover:
+- Rails version "7.0.4"
 
-* Ruby version
+# First install Redis db (https://redis.io/docs/getting-started/installation/)
 
-* System dependencies
+- Run redis-server on porst 6379
 
-* Configuration
+# Run rails application:
 
-* Database creation
+1. run bundle install (in cmd)
 
-* Database initialization
+2. run rails db:migrate (in cmd)
 
-* How to run the test suite
+3. run rails s (in cmd)
 
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+**This chat app uses sqlite for better performance you can change it to postgresql**
